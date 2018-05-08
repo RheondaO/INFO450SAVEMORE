@@ -5,25 +5,24 @@
 //  Created by Rheonda Ogletree on 5/7/18.
 //  Copyright © 2018 Rheonda Ogletree. All rights reserved.
 //
-
-
+#pragma once
 #include "BankAccount.h"
 #include <stdio.h>
 
-const int FEE = 5;
+const int CFEE = 5;
 
 class Checking : public BankAccount
 {
-    
-private:
+protected:
     double checkOrder;
+    
 public:
     Checking(); //Default Constructor
-    Checking(int r, double b, string n, double o);
+    Checking(int r, double b, int n, double o);
     
-    int withdraw(int amount);
-    int deposit(int amount);
-    int OrderCheck(int amount);
+    int withdraw();
+    int deposit();
+    int orderCheck();
     
     void display();
 };

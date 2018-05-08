@@ -5,7 +5,8 @@
 //  Created by Rheonda Ogletree on 4/27/18.
 //  Copyright © 2018 Rheonda Ogletree. All rights reserved.
 //
-
+#pragma once
+#include <string>
 #include <stdio.h>
 #include <iostream>
 
@@ -15,16 +16,17 @@ class BankAccount
 {
     
 protected:
-    int interestRate;
+    float interestRate;
+    double checkOrder;
     double balance;
-    string acctNumber;
+    int acctNumber;
     
 public:
     BankAccount();
-    BankAccount(int r, double b, string n);
+    BankAccount(float r, double b, int n);
     
-    virtual int withdraw(int amount); //pure virtual because there is
-    virtual int deposit(int amount); //different process for each account
+    virtual int withdraw(double balance); //pure virtual because there is
+    virtual int deposit(double balance); //different process for each account
     //virtual int assessInterest();
     
     virtual void display();

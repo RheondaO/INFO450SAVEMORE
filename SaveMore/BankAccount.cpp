@@ -14,15 +14,15 @@ using namespace std;
 
 BankAccount::BankAccount() //BankAccount Default Constructor
 {
-    interestRate = 0;
-    acctNumber = "";
-    balance = 12006;
+    interestRate = 0.0;
+    acctNumber = 00000;
+    balance = 0;
 }
 
-BankAccount::BankAccount(int r, double b, string n)
+BankAccount::BankAccount(float r, double b, int n)
 {
     interestRate = r;
-    acctNumber = "";
+    acctNumber = 0;
     balance = b;
 }
 
@@ -31,8 +31,9 @@ void BankAccount::setAcctNumber(int acctNumber)
     cin >> acctNumber;
 }
 
-int BankAccount::withdraw(int amount)
+int BankAccount::withdraw(double balance)
 {
+    int amount;
     cin >> amount;
     
     if (balance >= amount)
@@ -50,8 +51,9 @@ int BankAccount::withdraw(int amount)
     }
 }
 
-int BankAccount::deposit(int amount)
+int BankAccount::deposit(double balance)
 {
+    int amount;
     cin >> amount;
     balance += amount;
     
@@ -65,4 +67,12 @@ cout << "Account Number: " << acctNumber << endl;
 cout << "Account Balance: " << balance << endl;
 cout << "Interest Rate: " << interestRate << endl;
 cout << endl;
+}
+
+void setAcctNumber(int acctNumber)
+{
+    cout << "Enter New Account Number" << endl;
+    cin >> acctNumber;
+    
+    //ptr[i] = new BankAccount();
 }
